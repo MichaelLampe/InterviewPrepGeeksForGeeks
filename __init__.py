@@ -1,7 +1,8 @@
 # Implement various algorithms in python
 # http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
 
-
+from time import clock
+import random
 
 """
 Graph Theory
@@ -37,3 +38,40 @@ my_linked_list.add_node_sorted("C")                 # 1
 print my_linked_list.linked_list_to_string()
 print my_linked_list.remove_node("C").data
 print my_linked_list.linked_list_to_string()
+
+"""
+Dynamic Programming
+"""
+print "\n\n\nDYNAMIC PROGRAMMING"
+import DynamicProgramming
+X = "AGGTAB"
+Y = "GXTXAYB"
+print DynamicProgramming.longest_common_substring(X, Y)
+
+"""
+SORTING
+"""
+print "\n\n\nSORTING"
+from TeachMeHowToSort import (quicksort, quicksort_median_pivot)
+
+unsorted_array = random.sample(range(1, 99999), 10000)
+sorted_array = sorted(unsorted_array)
+
+
+
+"""
+These two implementations just differ by the pivot.
+They end up being about the same in regards to time for large samples,
+but they are a bit more volatile at low sample numbers.
+"""
+print "Quicksort sort result"
+start = clock()
+quicksort(unsorted_array)
+print clock() - start
+
+start = clock()
+quicksort_median_pivot(unsorted_array)
+print clock() - start
+
+print "Actual sorted array"
+print sorted_array
