@@ -52,7 +52,7 @@ print DynamicProgramming.longest_common_substring(X, Y)
 SORTING
 """
 print "\n\n\nSORTING"
-from TeachMeHowToSort import (quicksort, quicksort_median_pivot)
+from TeachMeHowToSort import (quicksort, quicksort_median_pivot, mergesort)
 
 unsorted_array = random.sample(range(1, 99999), 10000)
 sorted_array = sorted(unsorted_array)
@@ -66,12 +66,17 @@ but they are a bit more volatile at low sample numbers.
 """
 print "Quicksort sort result"
 start = clock()
-quicksort(unsorted_array)
+print quicksort(unsorted_array)
 print clock() - start
 
 start = clock()
-quicksort_median_pivot(unsorted_array)
+print quicksort_median_pivot(unsorted_array)
 print clock() - start
 
 print "Actual sorted array"
 print sorted_array
+
+print "Mergesort sort result"
+start = clock()
+print mergesort(unsorted_array)
+print clock() - start
