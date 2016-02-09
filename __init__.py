@@ -39,6 +39,19 @@ print my_linked_list.linked_list_to_string()
 print my_linked_list.remove_node("C").data
 print my_linked_list.linked_list_to_string()
 
+my_linked_list.add_node("E")
+my_linked_list.add_node("F")
+
+print my_linked_list.linked_list_to_string()
+my_linked_list.reverse_list()
+print my_linked_list.linked_list_to_string()
+
+my_linked_list.add_node_sorted("Q")
+
+print my_linked_list.linked_list_to_string()
+my_linked_list.reverse_list()
+print my_linked_list.linked_list_to_string()
+
 """
 Dynamic Programming
 """
