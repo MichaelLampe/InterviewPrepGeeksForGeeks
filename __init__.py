@@ -80,3 +80,42 @@ print "Mergesort sort result"
 start = clock()
 print mergesort(unsorted_array)
 print clock() - start
+
+
+from PreviousInterviewQuestions import (sum_dif_of_binary_pairs, determine_if_multiple_of_5_power_n)
+print "\n\n\nPREVIOUS INTERVIEW QUESTIONS"
+
+input_array_0 = [1]
+input_array_1 = [1, 2]
+input_array_2 = [1, 3, 5]
+
+print sum_dif_of_binary_pairs(input_array_0)
+print sum_dif_of_binary_pairs(input_array_1)
+print sum_dif_of_binary_pairs(input_array_2)
+
+
+print "\nDetermine if number is of form 5^n"
+s = clock()
+print determine_if_multiple_of_5_power_n(25)
+print clock() - s
+s = clock()
+# This case is false when it should be true likely due to floating point errors...
+print determine_if_multiple_of_5_power_n(125)
+print clock() - s
+s = clock()
+print determine_if_multiple_of_5_power_n(625)
+print clock() - s
+s = clock()
+print determine_if_multiple_of_5_power_n(3125)
+print clock() - s
+s = clock()
+print determine_if_multiple_of_5_power_n(126)
+print clock() - s
+s = clock()
+print determine_if_multiple_of_5_power_n(124)
+print clock() - s
+s = clock()
+print determine_if_multiple_of_5_power_n(30517578125)
+print clock() - s
+
+
