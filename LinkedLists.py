@@ -28,8 +28,12 @@ class LinkedList:
                 previous_node = self.head
                 current_node = self.head.next_node_pointer
                 while current_node.data <= data:
-                    previous_node = current_node
-                    current_node = current_node.next_node_pointer
+                    if current_node.next_node_pointer is None:
+                        break
+                    else:
+                        previous_node = current_node
+                        current_node = current_node.next_node_pointer
+
                 previous_node.next_node_pointer = self.Node(data)
                 previous_node.next_node_pointer.next_node_pointer = current_node
 
@@ -81,3 +85,22 @@ class LinkedList:
             output += str(current_node.data)
             current_node = current_node.next_node_pointer
         return output
+
+    def reverse_list(self, current_node=None, previous_node=None):
+        if current_node is None:
+            current_node = self.head
+        if current_node.next_node_pointer is None:
+            self.head = current_node
+            self.head.next_node_pointer = previous_node
+            return
+
+        if previous_node is None:
+            # Will be last node
+            next_node = current_node.next_node_pointer
+            current_node.next_node_pointer = None
+            return self.reverse_list(next_node, current_node)
+        else:
+            next_node = current_node.next_node_pointer
+            current_node.next_node_pointer = previous_node
+            return self.reverse_list(next_node, current_node)
+
