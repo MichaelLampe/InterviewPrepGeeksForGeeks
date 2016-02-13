@@ -187,10 +187,10 @@ class LRUCacheConstantTime:
 		if key not in self.cache:
 			self.cache.add_node_to_head(key, value)
 		else:
+			self.cache.move_node_to_head(key)
 			self.cache.update_node_value(key, value)
 		if len(self.cache) > self.capacity:
 			self.cache.remove_tail_node()
-
 
 def test_lru_cache(capacity, commands=None):
 	if commands is None:
@@ -211,6 +211,9 @@ def test_lru_cache(capacity, commands=None):
 			assert correct_cache.get(c[0]) == cache.get(c[0])
 	print "Finished testing without error."
 
+
+commands = [[2, 1], [1, 1], [2, 3], [4, 1], [1], [2]]
+test_lru_cache(2, commands)
 
 commands = [[2, 1], [2], [3, 2], [2], [3]]
 test_lru_cache(1, commands)
