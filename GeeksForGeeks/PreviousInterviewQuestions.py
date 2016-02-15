@@ -45,7 +45,8 @@ def sum_dif_of_binary_pairs(input_numbers):
 
 	return comb
 
-
+# Doesn't always work because of log division.
+# Serial division also works nicely.
 def determine_if_multiple_of_5_power_n(number):
 	log_of = math.log(number, 5.0)
 	return log_of.is_integer()
