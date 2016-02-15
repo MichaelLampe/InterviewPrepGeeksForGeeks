@@ -28,6 +28,6 @@ test_cases = [(2, True),
               (0, False),
               (-1, False)]
 
-for case in test_cases:s
+for case in test_cases:
 	assert isUgly(case[0]) == case[1]
 print "Finished without assertion error"
